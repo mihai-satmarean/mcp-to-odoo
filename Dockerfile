@@ -15,8 +15,7 @@ COPY . /app/
 RUN mkdir -p /app/logs && chmod 777 /app/logs
 
 # Install Python dependencies and the package
-RUN pip install --no-cache-dir "mcp[cli]" && \
-    pip install --no-cache-dir -e .
+RUN pip install --no-cache-dir -r src/requirements.txt
 
 # Set environment variables (can be overridden at runtime)
 ENV ODOO_URL=""
