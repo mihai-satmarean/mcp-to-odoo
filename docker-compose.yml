@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  mcp-odoo:
+    build: .
+    container_name: mcp-odoo
+    ports:
+      - "3333:3333"
+    environment:
+      ODOO_URL: "http://192.168.1.167:8069"
+      ODOO_DB: "isep2025prod"
+      ODOO_USERNAME: "admin"
+      ODOO_PASSWORD: "admin"
+      DEBUG: "1"
